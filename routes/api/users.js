@@ -127,10 +127,10 @@ router.delete('/:userId', async (req, res) => {
 router.get('/:userId/meetings', async (req, res) => {
   const { headerConfig, params, query } = req;
   const { userId } = params;
-  const { next_page_token } = query;
+  const { next_page_token, type } = query;
 
   try {
-    const request = await axios.get(`${ZOOM_API_BASE_URL}/users/${userId}/meetings?${qs.stringify({ next_page_token })}`, headerConfig);
+    const request = await axios.get(`${ZOOM_API_BASE_URL}/users/${userId}/meetings?${qs.stringify({ next_page_token, type })}`, headerConfig);
     return res.json(request.data);
   } catch (err) {
     return errorHandler(err, res, `Error fetching meetings for user: ${userId}`);
