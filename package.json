@@ -1,5 +1,5 @@
 {
-  "name": "Venditi Backend",
+  "name": "venditi-zoom-integration-backend",
   "version": "1.0.0",
   "description": "Venditi backend for Zoom integration",
   "main": "index.js",
